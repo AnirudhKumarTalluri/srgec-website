@@ -1,0 +1,28 @@
+Event Schedule
+
+Day 1: Technical Workshops
+Time: 10:00 AM - 1:00 PM
+
+10:00 AM - 10:30 AM: Registration and Welcome Address
+10:30 AM - 11:30 AM: Workshop on Artificial Intelligence
+11:30 AM - 12:30 PM: Workshop on Web Development
+12:30 PM - 1:00 PM: Q&A and Networking Session
+
+Day 2: Hackathon
+Time: 9:00 AM - 5:00 PM
+
+9:00 AM - 9:30 AM: Team Formation and Briefing
+9:30 AM - 12:00 PM: Hackathon Coding Session (Part 1)
+12:00 PM - 1:00 PM: Lunch Break
+1:00 PM - 4:00 PM: Hackathon Coding Session (Part 2)
+4:00 PM - 5:00 PM: Project Presentations and Judging
+
+Day 3: Technical Talks and Awards Ceremony
+Time: 11:00 AM - 3:00 PM
+
+11:00 AM - 12:30 PM: Technical Talks on Emerging Technologies
+12:30 PM - 1:30 PM: Lunch Break
+1:30 PM - 2:30 PM: Awards Ceremony and Prize Distribution
+2:30 PM - 3:00 PM: Closing Remarks and Networking
+
+Note: The schedule is subject to change. Please stay updated with any announcements.

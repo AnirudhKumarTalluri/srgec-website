@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Responsive Navigation Bar with Bootstrap</title>
+  <!-- Add the meta tag for responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Use Bootstrap CSS from CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS to style the navigation bar */
+    .navbar-custom-bg {
+      background-color: #007bff;
+      border-radius: 10px; /* Add border radius to the navbar */
+    }
+    .nav-link {
+      color: #fff;
+      position: relative;
+    }
+    .nav-link::before,
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      background-color: #f8f9fa; /* Adjust the underline color */
+      opacity: 0;
+      transition: width 0.3s ease, opacity 0.3s ease; /* Add transition for the underline animation */
+    }
+    .nav-link::before {
+      left: 0;
+    }
+    .nav-link::after {
+      right: 0;
+    }
+    .nav-item:hover .nav-link::before,
+    .nav-item.active .nav-link::before {
+      width: 50%; /* Set the desired width for the underline */
+      opacity: 1;
+    }
+    /* Increase the spacing between the links */
+    .navbar-nav .nav-item {
+      margin-right: 20px; /* Set the desired spacing between the links */
+    }
+    /* Custom CSS for the brand/logo in mobile view */
+    .navbar-brand-mobile {
+      text-align: center;
+    }
+    /* Center the links in desktop view */
+    @media (min-width: 992px) {
+      .navbar-nav {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    /* Animation for hover effect */
+    .nav-link:hover::before,
+    .nav-link:hover::after {
+      width: 50%;
+      opacity: 1;
+    }
+
+    /* Animation for active link effect */
+    .nav-item.active .nav-link::before,
+    .nav-item.active .nav-link::after {
+      width: 50%;
+      opacity: 1;
+    }
+
+    /* Keyframes for slide in from left animation */
+    @keyframes slideInFromLeft {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    /* Keyframes for slide in from right animation */
+    @keyframes slideInFromRight {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    /* Animation for slide in from left effect */
+    .nav-link:hover::before {
+      animation: slideInFromLeft 0.3s forwards;
+    }
+
+    /* Animation for slide in from right effect */
+    .nav-link:hover::after {
+      animation: slideInFromRight 0.3s forwards;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark navbar-custom-bg">
+    <div class="container-fluid">
+      <!-- Navbar Brand (optional) -->
+      <a class="navbar-brand d-md-none navbar-brand-mobile" href="#">Your Brand</a>
+
+      <!-- Toggle button for small screens -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar links (without background color) -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Use Bootstrap JS from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Handle the active link in mobile view
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        navItems.forEach(navItem => navItem.classList.remove('active'));
+        item.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

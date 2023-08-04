@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+   <!-- bootstrap cdn-->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <style>
+      .content-section.hidden {
+  display: none;
+}
+    </style>
+
+
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Intercept link clicks and handle content switching
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+      const contentSections = document.querySelectorAll('.content-section');
+  
+      navLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+          event.preventDefault(); // Prevent the default link behavior
+  
+          // Get the target section ID from the link's href attribute
+          const targetSectionId = link.getAttribute('href').substring(1);
+  
+          // Scroll to the target section (optional, for smooth scrolling)
+          const targetSection = document.getElementById(targetSectionId);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          }
+  
+          // Hide all content sections except the target section
+          contentSections.forEach(section => {
+            if (section.id === targetSectionId) {
+              section.classList.remove('hidden');
+            } else {
+              section.classList.add('hidden');
+            }
+          });
+        });
+      });
+    });
+  </script>
+  
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark navbar-custom-bg">
+    <div class="container-fluid">
+      <!-- Navbar Brand (optional) -->
+      <a class="navbar-brand d-md-none navbar-brand-mobile" href="#">Your Brand</a>
+
+      <!-- Toggle button for small screens -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar links (without background color) -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content sections -->
+  <section id="home" class="content-section">
+    <!-- Content for the "Home" section -->
+    <h1>Home Section</h1>
+  </section>
+
+  <section id="about" class="content-section hidden">
+    <!-- Content for the "About" section -->
+    <h1>About Section</h1>
+  </section>
+
+  <section id="services" class="content-section hidden">
+    <!-- Content for the "Services" section -->
+    <h1>Services Section</h1>
+  </section>
+
+  <section id="contact" class="content-section hidden">
+    <!-- Content for the "Contact" section -->
+    <h1>Contact Section</h1>
+  </section>
+
+  
+</body>
+</html>
